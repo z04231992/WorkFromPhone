@@ -28,7 +28,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
 
-  title: "Work From Phone",
+  title: "Work From Phone - Make Money From Your Phone",
 
   description: "Stop just using your phone. Start profiting from it. Real strategies. Real results. All from your phone.",
 
