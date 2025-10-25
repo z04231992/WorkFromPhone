@@ -80,7 +80,8 @@ export default function Portfolio() {
                   <img 
                     src="https://media.discordapp.net/attachments/1354510635236458703/1431512950652407911/image0.jpg?ex=68fdafd3&is=68fc5e53&hm=b322b6201d0bcc7dde5921b647f43f5645e9e80e34e54482b830adb510c7b10f&=&format=webp&width=664&height=885" 
                     alt="Profile Photo" 
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: 'center 20%' }}
                   />
             </div>
             
