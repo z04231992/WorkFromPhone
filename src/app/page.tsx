@@ -366,7 +366,7 @@ export default function Portfolio() {
               {/* Bottom Section */}
               <div className="absolute bottom-0 left-0 right-0">
                 <div className="rounded-t-2xl mx-4 p-3 text-center ml-0 px-3 bg-transparent py-0 mr-0 mb-1.5">
-                  <p className="text-black font-semibold text-2xl leading-6 tracking-tight">JAMIE</p>
+                  <p className="text-black font-semibold text-2xl leading-6 tracking-tight">WORK FROM PHONE</p>
                   <p className="text-gray-600 text-xs mt-1 tracking-tight leading-4">Money Making Mentor & Entrepreneur</p>
                 </div>
 
@@ -379,7 +379,7 @@ export default function Portfolio() {
           </div>
         </div>
 
-        <div className="text-center space-y-4 -mt-20">
+        <div className="text-center space-y-4 -mt-32">
               <h1
                 className={`text-2xl md:text-4xl font-bold text-white transition-all duration-1000 border-0 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
