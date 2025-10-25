@@ -22,7 +22,7 @@ export default function Portfolio() {
     return () => clearTimeout(timer)
   }, [])
 
-  const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
+  const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
     ref.current?.scrollIntoView({ behavior: "smooth" })
   }
 
