@@ -209,7 +209,7 @@ export default function Portfolio() {
         <div className={`mb-2 -mt-52 transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}>
-          <div className="relative w-[375px] h-[812px] mx-auto" style={{ transform: 'scale(0.6)', transformOrigin: 'center' }}>
+          <div className="relative w-[375px] h-[812px] mx-auto" style={{ transform: 'scale(0.7)', transformOrigin: 'center' }}>
             {/* iPhone Frame Image */}
             <img
               src="/images/iphone-mockup.png"
