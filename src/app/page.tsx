@@ -77,11 +77,11 @@ export default function Portfolio() {
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
             {/* Profile Picture */}
             <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-gray-700 flex-shrink-0 bg-gray-800 flex items-center justify-center">
-              <img 
-                src="https://cdn.discordapp.com/attachments/1290401225006780564/1431482496406786140/content.png?ex=68fd9376&is=68fc41f6&hm=364d6b5c50a4d2050f4ce029ab948efd7a25598865930fd01080efc7b3acaf00&" 
-                alt="Profile Photo" 
-                className="w-full h-full object-cover object-top"
-              />
+                  <img 
+                    src="https://media.discordapp.net/attachments/1354510635236458703/1431512950652407911/image0.jpg?ex=68fdafd3&is=68fc5e53&hm=b322b6201d0bcc7dde5921b647f43f5645e9e80e34e54482b830adb510c7b10f&=&format=webp&width=664&height=885" 
+                    alt="Profile Photo" 
+                    className="w-full h-full object-cover object-top"
+                  />
             </div>
             
             {/* About Text */}
