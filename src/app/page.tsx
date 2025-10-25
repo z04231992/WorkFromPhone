@@ -379,7 +379,7 @@ export default function Portfolio() {
           </div>
         </div>
 
-        <div className="text-center space-y-1 -mt-28">
+        <div className="text-center space-y-1 -mt-36">
               <h1
                 className={`text-2xl md:text-4xl font-bold text-white transition-all duration-1000 border-0 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
