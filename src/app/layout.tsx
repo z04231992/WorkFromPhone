@@ -28,9 +28,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
 
-  title: "Jerrod Lew - Content Creator",
+  title: "Work From Phone",
 
-  description: "Portfolio of Jerrod Lew, Social Media Content Creator",
+  description: "Stop just using your phone. Start profiting from it. Real strategies. Real results. All from your phone.",
 
   generator: "v0.app",
 
