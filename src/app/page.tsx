@@ -239,7 +239,7 @@ export default function Portfolio() {
               <div className="mx-4 mt-3 mb-4">
                 <div className="rounded-xl p-2 overflow-hidden bg-transparent py-0 px-0">
                   <iframe
-                    src="https://open.spotify.com/embed/artist/6Lg8Y5pMc0Gq5g8jrdmx93?utm_source=generator&theme=0"
+                    src="https://open.spotify.com/embed/track/1KMKBWBQEB0wdGlV7WR6JV?utm_source=generator&theme=0"
                     width="100%"
                     height="80"
                     frameBorder="0"
@@ -379,7 +379,7 @@ export default function Portfolio() {
           </div>
         </div>
 
-        <div className="text-center space-y-1 -mt-32">
+        <div className="text-center space-y-1 -mt-28">
               <h1
                 className={`text-2xl md:text-4xl font-bold text-white transition-all duration-1000 border-0 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
