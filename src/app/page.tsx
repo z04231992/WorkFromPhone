@@ -206,7 +206,7 @@ export default function Portfolio() {
       {/* Hero Section */}
       <section ref={heroRef} className="min-h-screen flex flex-col items-center justify-center relative z-10 px-4">
         {/* Interactive Phone Mockup - First Thing Visitors See */}
-        <div className={`mb-2 -mt-48 md:-mt-68 transition-all duration-1000 ${
+        <div className={`mb-2 -mt-56 md:-mt-76 transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}>
           <div className="relative w-[375px] h-[812px] mx-auto" style={{ transform: 'scale(0.7)', transformOrigin: 'center' }}>
