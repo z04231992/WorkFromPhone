@@ -379,14 +379,14 @@ export default function Portfolio() {
           </div>
         </div>
 
-        <div className="text-center space-y-4 -mt-32">
+        <div className="text-center space-y-1 -mt-32">
               <h1
                 className={`text-2xl md:text-4xl font-bold text-white transition-all duration-1000 border-0 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
                 <div>Stop just using your phone.</div>
-                <div className="mt-2">Start profiting from it.</div>
+                <div className="mt-0">Start profiting from it.</div>
               </h1>
           <p
             className={`text-sm md:text-base text-gray-300 transition-all duration-1000 delay-300 ${
