@@ -206,7 +206,7 @@ export default function Portfolio() {
       {/* Hero Section */}
       <section ref={heroRef} className="min-h-screen flex flex-col items-center justify-center relative z-10 px-4">
         {/* Interactive Phone Mockup - First Thing Visitors See */}
-        <div className={`mb-2 -mt-56 md:-mt-76 transition-all duration-1000 ${
+        <div className={`mb-2 -mt-56 md:-mt-64 transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}>
           <div className="relative w-[375px] h-[812px] mx-auto" style={{ transform: 'scale(0.7)', transformOrigin: 'center' }}>
@@ -239,7 +239,7 @@ export default function Portfolio() {
               <div className="mx-4 mt-3 mb-4">
                 <div className="rounded-xl p-2 overflow-hidden bg-transparent py-0 px-0">
                   <iframe
-                    src="https://open.spotify.com/embed/track/1KMKBWBQEB0wdGlV7WR6JV?utm_source=generator&theme=0"
+                    src="https://open.spotify.com/embed/track/5z0LSDpPpGwc2ZyJHpsE3J?utm_source=generator&theme=0"
                     width="100%"
                     height="80"
                     frameBorder="0"
