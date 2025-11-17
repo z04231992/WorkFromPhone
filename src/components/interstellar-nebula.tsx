@@ -258,6 +258,6 @@ export default function InterstellarNebula() {
 
   }, [])
 
-  return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none" style={{ zIndex: -1, height: '100dvh' }} />
+  return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none" style={{ zIndex: -1, height: '100vh', minHeight: '100vh' }} />
 
 }

@@ -152,6 +152,6 @@ export function ParticleField() {
 
   }, [])
 
-  return <canvas ref={canvasRef} className="fixed inset-0 w-full h-full pointer-events-none z-[1]" style={{ height: '100dvh' }} />
+  return <canvas ref={canvasRef} className="fixed inset-0 w-full h-full pointer-events-none z-[1]" style={{ height: '100vh', minHeight: '100vh' }} />
 
 }
