@@ -23,9 +23,16 @@ export default function Portfolio() {
   const mediaRef = useRef<HTMLDivElement>(null)
   const contactRef = useRef<HTMLDivElement>(null)
   const carouselRef = useRef<HTMLDivElement>(null)
+  const aboutRef = useRef<HTMLDivElement>(null)
+  const testimonialsRef = useRef<HTMLDivElement>(null)
   const isDragging = useRef(false)
   const startX = useRef(0)
   const scrollLeft = useRef(0)
+  
+  const [aboutVisible, setAboutVisible] = useState(false)
+  const [servicesVisible, setServicesVisible] = useState(false)
+  const [testimonialsVisible, setTestimonialsVisible] = useState(false)
+  const [contactVisible, setContactVisible] = useState(false)
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 500)
@@ -47,6 +54,71 @@ export default function Portfolio() {
     updateTime()
     const interval = setInterval(updateTime, 1000)
     return () => clearInterval(interval)
+  }, [])
+
+  // Scroll animations for sections
+  useEffect(() => {
+    const observers: IntersectionObserver[] = []
+
+    // About section observer
+    if (aboutRef.current) {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setAboutVisible(true)
+          }
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -100px 0px" }
+      )
+      observer.observe(aboutRef.current)
+      observers.push(observer)
+    }
+
+    // Services section observer
+    if (mediaRef.current) {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setServicesVisible(true)
+          }
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -100px 0px" }
+      )
+      observer.observe(mediaRef.current)
+      observers.push(observer)
+    }
+
+    // Testimonials section observer
+    if (testimonialsRef.current) {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setTestimonialsVisible(true)
+          }
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -100px 0px" }
+      )
+      observer.observe(testimonialsRef.current)
+      observers.push(observer)
+    }
+
+    // Contact section observer
+    if (contactRef.current) {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setContactVisible(true)
+          }
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -100px 0px" }
+      )
+      observer.observe(contactRef.current)
+      observers.push(observer)
+    }
+
+    return () => {
+      observers.forEach(observer => observer.disconnect())
+    }
   }, [])
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
@@ -210,8 +282,8 @@ export default function Portfolio() {
       <InterstellarNebula />
       <ParticleField />
 
-      {/* Navigation */}
-      <GlassmorphismNav />
+      {/* Navigation - Hidden */}
+      {/* <GlassmorphismNav /> */}
 
       {/* Hero Section */}
       <section ref={heroRef} className="min-h-screen flex flex-col items-center justify-center relative z-10 px-4">
@@ -426,11 +498,15 @@ export default function Portfolio() {
       </section>
 
       {/* About Me Section */}
-      <section id="about" className="py-24 flex items-center justify-center relative z-10 px-4">
+      <section id="about" ref={aboutRef} className="py-24 flex items-center justify-center relative z-10 px-4">
         <div className="max-w-5xl mx-auto w-full">
-          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16 animate-fade-in-up">About Me</h2>
+          <h2 className={`text-3xl md:text-4xl font-bold text-white text-center mb-16 transition-all duration-1000 ${
+            aboutVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>About Me</h2>
           
-          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+          <div className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-16 transition-all duration-1000 delay-300 ${
+            aboutVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+          }`}>
             {/* Profile Picture */}
             <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-gray-700 flex-shrink-0 bg-gray-800 flex items-center justify-center">
                   <img 
@@ -468,9 +544,13 @@ export default function Portfolio() {
 
       <section ref={mediaRef} className="py-24 flex items-center justify-center relative z-10 px-4">
         <div className="max-w-4xl mx-auto w-full">
-          <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-12 animate-fade-in-up">Whether you're a student, 9–5 worker, or just looking for extra income, you can start right from your phone.</h2>
+          <h2 className={`text-2xl md:text-3xl font-bold text-white text-center mb-12 transition-all duration-1000 ${
+            servicesVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>Whether you're a student, 9–5 worker, or just looking for extra income, you can start right from your phone.</h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 transition-all duration-1000 delay-300 ${
+            servicesVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+          }`}>
             <MediaDropZone type="mixed" title="eBay Sourcing" description="Find profitable items to resell" />
             <MediaDropZone type="mixed" title="Pricing Strategies" description="Maximize your profit margins" />
             <MediaDropZone type="mixed" title="Listing Optimization" description="Write descriptions that sell" />
@@ -482,11 +562,15 @@ export default function Portfolio() {
       {/* Testimonials Section - Hidden */}
       {/* <TestimonialsSection /> */}
 
-      <section className="py-4 flex items-center justify-center relative z-10 px-4">
+      <section ref={testimonialsRef} className="py-4 flex items-center justify-center relative z-10 px-4">
         <div className="max-w-6xl mx-auto w-full">
-          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12 animate-fade-in-up">More Testimonials</h2>
+          <h2 className={`text-3xl md:text-4xl font-bold text-white text-center mb-12 transition-all duration-1000 ${
+            testimonialsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>More Testimonials</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 transition-all duration-1000 delay-300 ${
+            testimonialsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+          }`}>
             {/* Testimonial 1 */}
             <div className="bg-card/50 backdrop-blur-sm border border-border rounded-lg p-6">
               <div className="flex items-center mb-4">
@@ -588,9 +672,13 @@ export default function Portfolio() {
 
       <section ref={contactRef} className="py-16 flex items-center justify-center relative z-10 px-4">
         <div className="max-w-xl mx-auto w-full">
-          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-8 animate-fade-in-up">Contact Me</h2>
+          <h2 className={`text-3xl md:text-4xl font-bold text-white text-center mb-8 transition-all duration-1000 ${
+            contactVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>Contact Me</h2>
 
-          <Card className="bg-card/80 backdrop-blur-sm border-border p-6 opacity-80">
+          <Card className={`bg-card/80 backdrop-blur-sm border-border p-6 opacity-80 transition-all duration-1000 delay-300 ${
+            contactVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+          }`}>
             <form className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
