@@ -20,7 +20,7 @@ export default function InterstellarNebula() {
 
       canvas.width = window.innerWidth
 
-      canvas.height = window.innerHeight
+      canvas.height = window.innerHeight * 2
 
     }
 
@@ -258,6 +258,6 @@ export default function InterstellarNebula() {
 
   }, [])
 
-  return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none" style={{ zIndex: -1, height: '100vh', minHeight: '100vh' }} />
+  return <canvas ref={canvasRef} className="fixed pointer-events-none" style={{ zIndex: -1, height: '200vh', minHeight: '200vh', top: '-50vh', left: 0, right: 0, width: '100%' }} />
 
 }

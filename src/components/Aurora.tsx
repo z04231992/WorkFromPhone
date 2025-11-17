@@ -143,7 +143,7 @@ export default function Aurora(props: {
 
     function resize() {
       const width = window.innerWidth
-      const height = Math.max(window.innerHeight, document.documentElement.clientHeight, window.visualViewport?.height || window.innerHeight)
+      const height = window.innerHeight * 2
       renderer.setSize(width, height)
       if (program) {
         program.uniforms.uResolution.value = [width, height]
@@ -168,7 +168,7 @@ export default function Aurora(props: {
         uTime: { value: 0 },
         uAmplitude: { value: amplitude },
         uColorStops: { value: colorStopsArray },
-        uResolution: { value: [window.innerWidth, Math.max(window.innerHeight, document.documentElement.clientHeight)] },
+        uResolution: { value: [window.innerWidth, window.innerHeight * 2] },
         uBlend: { value: blend },
       },
     })

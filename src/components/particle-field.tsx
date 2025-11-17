@@ -44,7 +44,7 @@ export function ParticleField() {
 
       canvas.width = window.innerWidth
 
-      canvas.height = window.innerHeight
+      canvas.height = window.innerHeight * 2
 
     }
 
@@ -152,6 +152,6 @@ export function ParticleField() {
 
   }, [])
 
-  return <canvas ref={canvasRef} className="fixed inset-0 w-full h-full pointer-events-none z-[1]" style={{ height: '100vh', minHeight: '100vh' }} />
+  return <canvas ref={canvasRef} className="fixed w-full pointer-events-none z-[1]" style={{ height: '200vh', minHeight: '200vh', top: '-50vh', left: 0, right: 0 }} />
 
 }
