@@ -159,9 +159,14 @@ export default function Portfolio() {
   // Social media apps
   const socialApps = [
     {
-      name: "Threads",
-      url: "https://threads.com/@jamie",
-      icon: <img src="/icons/threads-logo-white.svg" alt="Threads" className="w-6 h-6" />,
+      name: "About Me",
+      url: "#about",
+      isScroll: true,
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+        </svg>
+      ),
     },
     {
       name: "Insta",
@@ -169,20 +174,22 @@ export default function Portfolio() {
       icon: <img src="/icons/instagram-glyph-white.svg" alt="Instagram" className="w-6 h-6" />,
     },
     {
-      name: "LinkedIn",
-      url: "https://linkedin.com/in/jamie",
+      name: "Testimonies",
+      url: "#testimonials",
+      isScroll: true,
       icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
         </svg>
       ),
     },
     {
-      name: "Spotify",
-      url: "https://open.spotify.com/artist/example",
+      name: "Contact Me",
+      url: "#contact",
+      isScroll: true,
       icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z" />
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       ),
     },
@@ -414,22 +421,34 @@ export default function Portfolio() {
 
               {/* Social Media Apps */}
               <div className="mx-4 mb-4">
-                <div className="flex justify-center gap-7 border-0 my-0 py-0">
+                <div className="flex justify-center gap-4 border-0 my-0 py-0">
                   {socialApps.map((app, index) => (
                     <button
                       key={app.name + index}
                       className="flex flex-col items-center gap-1 group"
-                      onClick={() => window.open(app.url, "_blank")}
+                      onClick={() => {
+                        if ((app as any).isScroll) {
+                          if (app.name === "About Me") {
+                            scrollToSection(aboutRef)
+                          } else if (app.name === "Testimonies") {
+                            scrollToSection(testimonialsRef)
+                          } else if (app.name === "Contact Me") {
+                            scrollToSection(contactRef)
+                          }
+                        } else {
+                          window.open(app.url, "_blank")
+                        }
+                      }}
                     >
                       <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-105 transition-transform duration-200">
                         {app.icon}
                       </div>
-                      <span className="text-black text-xs font-medium w-12 text-center">{app.name}</span>
+                      <span className="text-black text-xs font-medium w-16 text-center">{app.name}</span>
                     </button>
                   ))}
                 </div>
 
-                <div className="flex justify-center border-0 my-0 py-0 mt-4 gap-7">
+                <div className="flex justify-center border-0 my-0 py-0 mt-4 gap-4">
                   {secondRowApps.map((app, index) => (
                     <button
                       key={app.name + index + "second"}
@@ -439,7 +458,7 @@ export default function Portfolio() {
                       <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-105 transition-transform duration-200">
                         {app.icon}
                       </div>
-                      <span className="text-black text-xs font-medium w-12 text-center">{app.name}</span>
+                      <span className="text-black text-xs font-medium w-16 text-center">{app.name}</span>
                     </button>
                   ))}
                 </div>
@@ -447,7 +466,7 @@ export default function Portfolio() {
 
               {/* Bottom Section */}
               <div className="absolute bottom-0 left-0 right-0">
-                <div className="rounded-t-2xl mx-4 p-3 text-center ml-0 px-3 bg-transparent py-0 mr-0 mb-1.5">
+                <div className="rounded-t-2xl mx-4 p-3 text-center ml-0 px-3 bg-transparent py-0 mr-0 mb-8">
                   <p className="text-black font-semibold text-2xl leading-6 tracking-tight">WORK FROM PHONE</p>
                   <p className="text-gray-600 text-xs mt-1 tracking-tight leading-4">Money Making Mentor & Entrepreneur</p>
                 </div>
@@ -523,7 +542,7 @@ export default function Portfolio() {
                 <div className="text-white leading-relaxed space-y-4 text-base">
                   <p>👋 Hello, I am Jamie.</p>
                   
-                  <p>I've spent the last 10+ years mentoring people of all ages — sharing wealth, knowledge, and opportunity. I truly believe there's enough food on the table for everyone.</p>
+                  <p>I've spent the last 10+ years mentoring people of all ages — sharing <span className="text-green-400">wealth, knowledge, and opportunity</span>. I truly believe there's enough food on the table for everyone.</p>
                   
                   <p>I started with nothing — less than $200 in my bank account. I was a college dropout with no backup plan, no mentors, and no examples to follow. Everything I've learned came from trial, failure, and experience.</p>
                   

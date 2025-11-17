@@ -81,7 +81,7 @@ export function ProblemSolutionSection() {
             <span className="text-red-400">60-70%</span> of Your Opportunities Are Slipping Away
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto font-light leading-relaxed">
-            While you're busy with your day job, profitable opportunities are going unnoticed. Here's how we fix it.
+            While you're busy with your day job, profitable opportunities are going unnoticed.<br />Here's how we fix it.
           </p>
         </div>
 
@@ -105,7 +105,7 @@ export function ProblemSolutionSection() {
               <div className="bg-red-500/10 backdrop-blur-sm border border-red-500/20 rounded-xl p-4 sm:p-6 mb-6">
                 <div className="text-3xl sm:text-4xl font-bold text-red-400 mb-2">4+ Hours</div>
                 <p className="text-white/80 text-sm sm:text-base">
-                  Average response time, but 78% of customers choose the first business to respond
+                  Average research time, which is time-consuming, and without direction, opportunities are often missed.
                 </p>
               </div>
 
@@ -125,7 +125,7 @@ export function ProblemSolutionSection() {
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-white/70 text-sm sm:text-base">Marketing spend wasted on unresponded inquiries</p>
+                  <p className="text-white/70 text-sm sm:text-base">Struggling to stay ahead of fast-moving market trends</p>
                 </div>
               </div>
             </div>
@@ -145,7 +145,7 @@ export function ProblemSolutionSection() {
               <div className="bg-green-500/10 backdrop-blur-sm border border-green-500/20 rounded-xl p-4 sm:p-6 mb-6">
                 <div className="text-3xl sm:text-4xl font-bold text-green-400 mb-2">24/7</div>
                 <p className="text-white/80 text-sm sm:text-base">
-                  Learn proven strategies from your phone, make money while you sleep
+                  Learn proven strategies right from your phone while we do the research for you.
                 </p>
               </div>
 
@@ -157,7 +157,7 @@ export function ProblemSolutionSection() {
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle />
-                  <p className="text-white/70 text-sm sm:text-base">Complete guides on pricing and listing optimization</p>
+                  <p className="text-white/70 text-sm sm:text-base">Real-time alerts and expert guidance</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle />
