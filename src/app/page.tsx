@@ -10,6 +10,10 @@ import { Card } from "@/components/ui/card"
 import InterstellarNebula from "@/components/interstellar-nebula"
 import { ParticleField } from "@/components/particle-field"
 import { MediaDropZone } from "@/components/media-drop-zone"
+import Aurora from "@/components/Aurora"
+import { GlassmorphismNav } from "@/components/glassmorphism-nav"
+import { ProblemSolutionSection } from "@/components/problem-solution-section"
+import { TestimonialsSection } from "@/components/testimonials-section"
 
 export default function Portfolio() {
   const [isVisible, setIsVisible] = useState(false)
@@ -198,10 +202,16 @@ export default function Portfolio() {
   }
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden bg-black">
       {/* Background Effects */}
+      <div className="fixed inset-0 w-full h-full z-0">
+        <Aurora colorStops={["#475569", "#64748b", "#475569"]} amplitude={1.2} blend={0.6} speed={0.8} />
+      </div>
       <InterstellarNebula />
       <ParticleField />
+
+      {/* Navigation */}
+      <GlassmorphismNav />
 
       {/* Hero Section */}
       <section ref={heroRef} className="min-h-screen flex flex-col items-center justify-center relative z-10 px-4">
@@ -379,7 +389,7 @@ export default function Portfolio() {
           </div>
         </div>
 
-        <div className="text-center space-y-1 -mt-36">
+        <div className="text-center space-y-1 -mt-36 relative z-10">
               <h1
                 className={`text-2xl md:text-4xl font-bold text-white transition-all duration-1000 border-0 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -389,7 +399,7 @@ export default function Portfolio() {
                 <div className="mt-0">Start profiting from it.</div>
               </h1>
           <p
-            className={`text-sm md:text-base text-gray-300 transition-all duration-1000 delay-300 ${
+            className={`text-sm md:text-base text-white/80 transition-all duration-1000 delay-300 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
@@ -415,9 +425,10 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section className="py-24 flex items-center justify-center relative z-10 px-4">
+      {/* About Me Section */}
+      <section id="about" className="py-24 flex items-center justify-center relative z-10 px-4">
         <div className="max-w-5xl mx-auto w-full">
-          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16 fade-in-up">About Me</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16 animate-fade-in-up">About Me</h2>
           
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
             {/* Profile Picture */}
@@ -452,9 +463,12 @@ export default function Portfolio() {
         </div>
       </section>
 
+      {/* Problem/Solution Section */}
+      <ProblemSolutionSection />
+
       <section ref={mediaRef} className="py-24 flex items-center justify-center relative z-10 px-4">
         <div className="max-w-4xl mx-auto w-full">
-          <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-12 fade-in-up">Whether you're a student, 9–5 worker, or just looking for extra income, you can start right from your phone.</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-12 animate-fade-in-up">Whether you're a student, 9–5 worker, or just looking for extra income, you can start right from your phone.</h2>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <MediaDropZone type="mixed" title="eBay Sourcing" description="Find profitable items to resell" />
@@ -465,9 +479,12 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section className="py-24 flex items-center justify-center relative z-10 px-4">
+      {/* Testimonials Section - Hidden */}
+      {/* <TestimonialsSection /> */}
+
+      <section className="py-4 flex items-center justify-center relative z-10 px-4">
         <div className="max-w-6xl mx-auto w-full">
-          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16 fade-in-up">Testimonials</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12 animate-fade-in-up">More Testimonials</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Testimonial 1 */}
@@ -571,7 +588,7 @@ export default function Portfolio() {
 
       <section ref={contactRef} className="py-16 flex items-center justify-center relative z-10 px-4">
         <div className="max-w-xl mx-auto w-full">
-          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-8 fade-in-up">Contact Me</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-8 animate-fade-in-up">Contact Me</h2>
 
           <Card className="bg-card/80 backdrop-blur-sm border-border p-6 opacity-80">
             <form className="space-y-4">

@@ -50,7 +50,7 @@ export default function RootLayout({
 
     <html lang="en" className={`${nunito.variable} ${inter.variable} dark`}>
 
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased bg-black">{children}</body>
 
     </html>
 
