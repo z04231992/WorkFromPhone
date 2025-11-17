@@ -33,6 +33,12 @@ export const metadata: Metadata = {
   description: "Stop just using your phone. Start profiting from it. Real strategies. Real results. All from your phone.",
 
   generator: "v0.app",
+  
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+  },
 
 }
 
@@ -48,9 +54,9 @@ export default function RootLayout({
 
   return (
 
-    <html lang="en" className={`${nunito.variable} ${inter.variable} dark`}>
+    <html lang="en" className={`${nunito.variable} ${inter.variable} dark`} style={{ height: '100%' }}>
 
-      <body className="font-sans antialiased bg-black">{children}</body>
+      <body className="font-sans antialiased bg-black" style={{ minHeight: '100dvh' }}>{children}</body>
 
     </html>
 

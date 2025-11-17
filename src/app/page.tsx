@@ -274,9 +274,9 @@ export default function Portfolio() {
   }
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-black">
+    <div className="min-h-screen min-h-[100dvh] relative overflow-hidden bg-black">
       {/* Background Effects */}
-      <div className="fixed inset-0 w-full h-full z-0">
+      <div className="fixed inset-0 w-full h-full z-0" style={{ height: '100dvh' }}>
         <Aurora colorStops={["#475569", "#64748b", "#475569"]} amplitude={1.2} blend={0.6} speed={0.8} />
       </div>
       <InterstellarNebula />
@@ -519,7 +519,7 @@ export default function Portfolio() {
             
             {/* About Text */}
             <div className="flex-1 space-y-4">
-              <div className="bg-card/50 backdrop-blur-sm border border-border rounded-lg p-8">
+              <div className="bg-slate-500/10 backdrop-blur-sm border border-slate-500/20 rounded-xl p-6 sm:p-8">
                 <div className="text-white leading-relaxed space-y-4 text-base">
                   <p>👋 Hello, I am Jamie.</p>
                   
